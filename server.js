@@ -56,6 +56,14 @@ app.get('/about', (req,res)=>{
   }); //render any of the templates you have set up with your current view engine
 });
 
+app.get('/project', (req,res)=>{
+  //res.send('Project Page');
+  res.render('project.hbs',{
+    pageTitle: 'Project Page',
+    welcomeMessage: "This is the project Page!!"
+  }); //render any of the templates you have set up with your current view engine
+});
+
 app.get('/bad', (req,res)=>{
   //res.send('something wrong');
   res.send({
