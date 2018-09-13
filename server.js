@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000; //store the port we use for the app, the environment var; process.env is an object stores all of our environment vars as key var pairs
 var app = express();  //__dirname store the file path to your project's directory
 
 hbs.registerPartials(__dirname+'/views/partials')
@@ -62,6 +63,6 @@ app.get('/bad', (req,res)=>{
   });
 });
 
-app.listen(3000, ()=>{ //do something once the page is up; optional
-  console.log('page up on port 3000');
+app.listen(port, ()=>{ //do something once the page is up; optional
+  console.log(`page up on port ${port}`);
 }); //bind the app to the port of our machine
